@@ -1,6 +1,6 @@
 package com.sykora.socialnetworkapp.config;
 
-import com.sykora.socialnetworkapp.service.IJwtProvider;
+import com.sykora.socialnetworkapp.service.JwtTokenService;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
@@ -15,9 +15,9 @@ import java.io.IOException;
 @Component
 public class JwtTokenFilter extends OncePerRequestFilter {
 
-    private final IJwtProvider jwtProvider;
+    private final JwtTokenService jwtProvider;
 
-    public JwtTokenFilter(IJwtProvider jwtProvider) {
+    public JwtTokenFilter(JwtTokenService jwtProvider) {
         this.jwtProvider = jwtProvider;
     }
 
