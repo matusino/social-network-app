@@ -1,4 +1,4 @@
-package com.sykora.socialnetworkapp.config;
+package com.sykora.socialnetworkapp.service.impl;
 
 import com.nimbusds.jose.JOSEObjectType;
 import com.nimbusds.jose.JWSAlgorithm;
@@ -10,7 +10,7 @@ import com.nimbusds.jose.jwk.gen.ECKeyGenerator;
 import com.nimbusds.jwt.JWT;
 import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.SignedJWT;
-import com.sykora.socialnetworkapp.service.IJwtProvider;
+import com.sykora.socialnetworkapp.service.JwtTokenService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -28,7 +28,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Component
-public class JwtProvider implements IJwtProvider {
+public class JwtTokenImpl implements JwtTokenService {
 
     @Value("${jwt.token.sign.key}")
     private String jwtTokenSignKey;
